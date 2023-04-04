@@ -19,8 +19,27 @@ function generatePassword() {
   } else{
     window.prompt('must be between 8-128')
   }
+// This is going to do the confirmation plus it gives a varible to each set
+  var lowercase = confirm('Do you want to include lowercase letters?');
+  var upercase = confirm('DO you want to include uppercase letters?');
+  var numbers = confirm('Do you want to include numbers?');
+  var special = confirm('Do you want to include special characters?');
+// calls each var and adds the necessary characters
+  if (lowercase){
+    characters += 'abcdefghijklmnopqrstuvwxyz';
+  }
 
+  if (upercase) {
+    characters += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  }
 
+  if (numbers) {
+    characters += '0123456789'
+  }
+
+  if (special) {
+    characters += '!@#$%^&*()'
+  }
 
   return('generated password will go here');
 };  
