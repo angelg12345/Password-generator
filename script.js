@@ -11,3 +11,11 @@ function writePassword() {
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+function generatePassword() {
+  userChoice = window.prompt ('How many characters would you like your password to contain?')
+
+  if (userChoice < 8)   {
+    
+  }
+};
