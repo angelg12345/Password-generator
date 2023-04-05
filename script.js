@@ -14,18 +14,21 @@ function generatePassword() {
   //4. display the generated password to the page
  var userChoice = window.prompt ('How many characters would you like your password to contain?')
 
-  if (userChoice >= 8 && userChoice <= 128 ) {
-    confirm('do you want to include lowercase?')
-  } else{
-    window.prompt('must be between 8-128')
-  }
+  if (userChoice >= 8 && userChoice <= 128 )  {
+
+
 // This is going to do the confirmation plus it gives a varible to each set
   var lowercase = confirm('Do you want to include lowercase letters?');
   var upercase = confirm('DO you want to include uppercase letters?');
   var numbers = confirm('Do you want to include numbers?');
   var special = confirm('Do you want to include special characters?');
-// calls each var and adds the necessary characters
-  if (lowercase){
+  } else {
+    alert('must be between 8-128')
+    return '';
+  }
+  // calls each var and adds the necessary characters
+  var characters = '';
+if (lowercase){
     characters += 'abcdefghijklmnopqrstuvwxyz';
   }
 
@@ -41,7 +44,12 @@ function generatePassword() {
     characters += '!@#$%^&*()'
   }
 
-  return('generated password will go here');
+  password = '';
+  for (var i = 0; i < userChoice; i++) {
+    var random = Math.floor(Math.random() * characters.length);
+    password += characters[random]
+  }
+  return(password);
 };  
 
 
