@@ -35,7 +35,7 @@ if (lowercase){
   }
 
   if (special) {
-    characters += '!@#$%^&*()'
+    characters += '!@#$%^&*()+,-./:;<=>?[]_{}|'
   } else {
     alert('must have atleast one condition')
     return ''
