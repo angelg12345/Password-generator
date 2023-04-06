@@ -2,16 +2,10 @@
 var generateBtn = document.querySelector("#generate");
 
 
-
+// this is where the password is made and the generatepassword function is called on line 57
 function generatePassword() {
   console.log('hey you clicked the button')
  
-  // 1. prompt the user for the password criteria
-  // 1b. password length 8- 128
-  // c. promp the user whether they want to include lowercase, uppercase, and or special charcters
-  //2. validate the input.
-  //3. generate password based on criteria
-  //4. display the generated password to the page
  var userChoice = window.prompt ('How many characters would you like your password to contain?')
 
   if (userChoice >= 8 && userChoice <= 128 )  {
@@ -46,7 +40,7 @@ if (lowercase){
     alert('must have atleast one condition')
     return ''
   }
-
+// This is where the password goes and randomizes depending on characters added and length chosen by user.
   password = '';
   for (var i = 0; i < userChoice; i++) {
     var random = Math.floor(Math.random() * characters.length);
