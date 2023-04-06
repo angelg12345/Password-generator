@@ -18,12 +18,12 @@ function generatePassword() {
 
 
 // This is going to do the confirmation plus it gives a varible to each set
-  var lowercase = confirm('Do you want to include lowercase letters?');
-  var upercase = confirm('DO you want to include uppercase letters?');
-  var numbers = confirm('Do you want to include numbers?');
-  var special = confirm('Do you want to include special characters?');
+  var lowercase = confirm('click ok to confirm including lowercase letters?');
+  var upercase = confirm('click ok to confirm including uppercase letters?');
+  var numbers = confirm('click ok to confirm including numbers?');
+  var special = confirm('click ok to confirm including special characters?');
   } else {
-    alert('must be between 8-128')
+    alert('must be a number between 8-128')
     return '';
   }
   // calls each var and adds the necessary characters
@@ -42,6 +42,9 @@ if (lowercase){
 
   if (special) {
     characters += '!@#$%^&*()'
+  } else {
+    alert('must have atleast one condition')
+    return ''
   }
 
   password = '';
