@@ -4,9 +4,9 @@ var generateBtn = document.querySelector("#generate");
 
 // this is where the password is made and the generatepassword function is called on line 57
 function generatePassword() {
-  console.log('hey you clicked the button')
+console.log('hey you clicked the button')
  
- var userChoice = window.prompt ('How many characters would you like your password to contain?')
+  var userChoice = window.prompt ('How many characters would you like your password to contain?')
 
   if (userChoice >= 8 && userChoice <= 128 )  {
 
@@ -16,12 +16,10 @@ function generatePassword() {
   var upercase = confirm('click ok to confirm including uppercase letters?');
   var numbers = confirm('click ok to confirm including numbers?');
   var special = confirm('click ok to confirm including special characters?');
-  } else {
-    alert('must be a number between 8-128')
-    return '';
-  }
-  // calls each var and adds the necessary characters
+ 
+// This is getting characters to include at least one type.
   var characters = '';
+ 
 if (lowercase){
     characters += 'abcdefghijklmnopqrstuvwxyz';
   }
@@ -36,22 +34,25 @@ if (lowercase){
 
   if (special) {
     characters += '!@#$%^&*()+,-./:;<=>?[]_{}|'
-  } else {
-    alert('must have atleast one condition')
+  } 
+
+  if (characters === ''){
+    alert('You must include one character type.')
     return ''
   }
 // This is where the password goes and randomizes depending on characters added and length chosen by user.
-  password = '';
-  for (var i = 0; i < userChoice; i++) {
+var password = '';
+for (var i = 0; i < userChoice; i++) {
     var random = Math.floor(Math.random() * characters.length);
     password += characters[random]
   }
   return(password);
-};  
 
-
-
-
+} else {
+  alert('Password length must be a number between 8-128');
+  return '';
+}
+};
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
